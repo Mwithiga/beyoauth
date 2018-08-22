@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Beyonic Assessment|Login{% endblock %}
+{% block content %}
+	{% if form.errors %}
+		<p>
+			Your username and password didn't match.
+			Please try again.
+		</p>
+	{% endif %}
+	<div class="form-body">
+		<form class="form-layout" action="." method="post">
+			<p> If you don't have an account
+			 	<a href="{% url "register" %}"> register here</a>
+			</p>
+			<h3 class="form-signin-heading">Sign in</h3>
+			{{ form.as_p }}
+			{% csrf_token %}
+			<p><input type="submit" class="btn primary" value="Login"></p>
+			<p><a href="{% url "password_reset" %}">Forgotten your password?</a></p>
+		</form>
+	</div>
+{% endblock %}

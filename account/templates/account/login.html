@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Beyonic Assessment | Login{% endblock %}
+{% block content %}
+	<form class="form-signing" action="." method="post">
+		<h3 class="form-signin-heading">Sign in</h3>
+		{{ form.as_p }}
+		{% csrf_token %}
+		<p><input type="submit" class="btn primary" value="Login"></p>
+	</form>
+{% endblock %}
